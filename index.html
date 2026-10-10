@@ -286,20 +286,34 @@
         });
     });
 
- const audio = document.getElementById('myAudio');
+    const audio = document.getElementById('myAudio');
 
-audio.volume = 1;
+    audio.volume = 1;
 
-function startMusic() {
-    if (audio.paused) {
-        audio.play().catch(err => {
-            console.log('Không thể phát nhạc:', err);
-        });
+    function startMusic() {
+        if (audio.paused) {
+            audio.play().catch(err => {
+                console.log('Không thể phát nhạc:', err);
+            });
+        }
     }
-}
 
-document.addEventListener('touchstart', startMusic, { once: true });
-document.addEventListener('click', startMusic, { once: true });
+    // Điện thoại: chạm hoặc bắt đầu vuốt
+    document.addEventListener('touchstart', startMusic, {
+        once: true,
+        passive: true
+    });
+
+    // Máy tính: click hoặc tương tác bằng chuột
+    document.addEventListener('click', startMusic, {
+        once: true
+    });
+
+    // Bắt đầu cuộn trang
+    document.addEventListener('scroll', startMusic, {
+        once: true,
+        passive: true
+    });
 
 
 
