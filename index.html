@@ -17,7 +17,8 @@
 
     <meta property="og:title" content="Lễ Thành Hôn Ngọc Minh & Nguyễn Thu" />
     <meta property="og:description" content="Thiệp mời dự Lễ Thành Hôn" />
-    <meta property="og:image" content="https://muadongyeuthuong3x.github.io/NgocMinh-NguyenThu/source/doc/HAN_6092.jpg" />
+    <meta property="og:image"
+        content="https://muadongyeuthuong3x.github.io/NgocMinh-NguyenThu/source/doc/HAN_6092.jpg" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="source/favicon.png" type="image/png">
 
@@ -92,7 +93,8 @@
 
                 <!-- phần icon -->
                 <div class="thiep_all_icon">
-                    <a class="thiep_map" href="https://www.google.com/maps/place/20%C2%B022'55.2%22N+106%C2%B024'21.4%22E/@20.3820008,106.4059342,17z/data=!3m1!4b1!4m4!3m3!8m2!3d20.3820008!4d106.4059342?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D">
+                    <a class="thiep_map"
+                        href="https://www.google.com/maps/place/20%C2%B022'55.2%22N+106%C2%B024'21.4%22E/@20.3820008,106.4059342,17z/data=!3m1!4b1!4m4!3m3!8m2!3d20.3820008!4d106.4059342?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D">
                         <img src="./source/pin_map.svg" alt="">
                     </a>
                 </div>
@@ -169,13 +171,13 @@
     <div class="album_container">
         <img class="js_album album_left" src="./source/doc/HAN_5689.jpg" alt="">
         <img class="js_album album_left" src="./source/doc/HAN_5696.jpg" alt="">
-      
-       
+
+
         <img class="js_album album_left" src="./source/doc/HAN_6092.jpg" alt="">
         <img class="js_album album_left" src="./source/doc/HAN_6189.jpg" alt="">
         <!-- <img class="js_album album_left" src="./source/doc/cam_3.svg" alt=""> -->
-         <img class="js_album album_left" src="./source/doc/HAN_5967.jpg" alt="">
-         <img class="js_album album_left" src="./source/doc/HAN_6030.jpg" alt="">
+        <img class="js_album album_left" src="./source/doc/HAN_5967.jpg" alt="">
+        <img class="js_album album_left" src="./source/doc/HAN_6030.jpg" alt="">
         <!-- <img class="js_album album_right" src="./source/ngang/xam_n.svg" alt="">
         <img class="js_album album_right" src="./source/doc/cam_4.svg" alt="">
         <img class="js_album album_right" src="./source/doc/xam_3.svg" alt=""> -->
@@ -283,6 +285,12 @@
             });
         });
     });
+
+    const audio = document.getElementById('myAudio');
+
+    document.addEventListener('click', function startMusic() {
+        audio.play().catch(err => console.log(err));
+    }, { once: true });
 
 
 
