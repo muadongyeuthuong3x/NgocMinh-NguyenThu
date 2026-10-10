@@ -286,11 +286,20 @@
         });
     });
 
-    const audio = document.getElementById('myAudio');
+ const audio = document.getElementById('myAudio');
 
-    document.addEventListener('click', function startMusic() {
-        audio.play().catch(err => console.log(err));
-    }, { once: true });
+audio.volume = 1;
+
+function startMusic() {
+    if (audio.paused) {
+        audio.play().catch(err => {
+            console.log('Không thể phát nhạc:', err);
+        });
+    }
+}
+
+document.addEventListener('touchstart', startMusic, { once: true });
+document.addEventListener('click', startMusic, { once: true });
 
 
 
