@@ -101,31 +101,61 @@ body {
     }
 }
 
+
+.thiep {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .thiep::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url(./source/doc/back_thiep.svg);
-    background-size: cover;
-    background-position: center;
+
+    background-image: url("./source/doc/HAN_6092.jpg");
+    background-size: contain;
+    background-position: calc(50% + 20px) calc(50% - 28px);
     background-repeat: no-repeat;
-    animation: zoomInOut 10s ease-in-out infinite;
+
+    transform: scale(1);
+    transform-origin: center center;
+    animation: zoomInOut 12s ease-in-out infinite;
+
     z-index: 0;
-    transform-origin: center;
+    pointer-events: none;
+}
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
 }
 
 .thiep_blur-bg {
     position: relative;
+    z-index: 1;
     width: 92%;
     margin: 4%;
     border-radius: 20px;
-    background: #7d7d7d45;
+
+    /* background: rgba(125, 125, 125, 0.25);
     -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px); */
     color: white;
     text-align: center;
-    z-index: 1;
+    
 }
+
+
 
 .thiep_container {
     position: relative;
@@ -227,18 +257,50 @@ body {
 
 .thiep_month_year {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: 1px;
+    margin-left: 15px;
 }
 
-/* phần 3 */
+.thiep_month_year {
+    text-align: center;
+    width: 100%;
+}
+
 .thiep_add {
     position: relative;
     display: flex;
+    margin-left: 15px;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    width: 100%;
     margin-top: 18px;
+    text-align: center;
+    box-sizing: border-box;
 }
+
+.thiep_add p {
+    display: block;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.hr-add {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 15px auto;
+    border: none;
+    border-top: 1px solid #999;
+    position: static;
+}
+
+
+/* phần 3 */
+
 
 .add_fancy {
     font-size: 20px;
@@ -269,6 +331,7 @@ body {
 .thiep_all_icon {
     display: block;
     margin: 16px 0;
+    margin-left: 25px;
 }
 
 .thiep_map {
@@ -324,14 +387,17 @@ body {
     overflow: hidden;
     border-radius: 20px;
     margin-bottom: 18px;
+
 }
 
 .gt_img img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* height: 100%; */
+    /* object-fit: cover; */
     border-radius: 20px;
     display: block;
+
+    transform: translateY(10px);
 }
 
 /* .caption {
